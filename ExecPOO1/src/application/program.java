@@ -17,5 +17,6 @@ public class program {
         retangulo.diagonal();
 
         System.out.println(retangulo);
+        sc.close();
     }
 }

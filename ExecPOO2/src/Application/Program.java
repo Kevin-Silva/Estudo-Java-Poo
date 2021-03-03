@@ -25,6 +25,6 @@ public class Program {
         employee.increaseSalary(percentage);
 
         System.out.println("Updated data: " + employee);
-
+        sc.close();
     }
 }
