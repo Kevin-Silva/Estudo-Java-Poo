@@ -3,11 +3,13 @@ package Application;
 import java.util.Scanner;
 import java.util.Locale;
 import Entities.Student;
+import Service.Calculos;
 public class Program {
     public static void main(String[] args){
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
         Student student = new Student();
+        Calculos calc = new Calculos();
 
         System.out.println("Enter the student name: ");
         student.name  = sc.nextLine();
@@ -19,11 +21,13 @@ public class Program {
         System.out.println("Enter the third grade: ");
         student.nota3 = sc.nextDouble();
 
-        System.out.println("Final grade = " + student.finalGrade());
+        calc.finalGrade(student.nota1, student.nota2, student.nota3);
 
-        if(student.finalGrade() < 60){
+        System.out.println("Final grade = " + calc.finalGrade(student.nota1, student.nota2, student.nota3));
+
+        if(calc.finalGrade(student.nota1, student.nota2, student.nota3) < 60){
             System.out.println("Failed");
-            System.out.printf("Missing %.2f points%n", student.missingGrade());
+            System.out.printf("Missing %.2f points%n", calc.missingGrade(student.nota1, student.nota2, student.nota3));
 
         }
         else{
