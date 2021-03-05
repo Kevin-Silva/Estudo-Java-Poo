@@ -1,5 +1,6 @@
 package Application;
 import Entities.Employee;
+import Service.Calculadora;
 
 import java.util.Scanner;
 import java.util.Locale;
@@ -8,23 +9,24 @@ public class Program {
     public static void main(String[] args){
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
-        Employee employee = new Employee();
 
         System.out.println("Name: ");
-        employee.name = sc.nextLine();
+        String name = sc.nextLine();
         System.out.println("Gross Salary: ");
-        employee.grossSalary = sc.nextDouble();
+        double grossSalary = sc.nextDouble();
         System.out.println("Tax: ");
-        employee.tax = sc.nextDouble();
+        double tax = sc.nextDouble();
 
-        System.out.println("Employee: " + employee);
+        Employee employee = new Employee(name, grossSalary, tax);
+        
+        double calculo1 = Calculadora.netSalary(employee.getGrossSalary(), employee.getTax());
+        System.out.printf("Employee: " + employee.getName() + "$ " + "%.2f\n",calculo1);
 
         System.out.println("Which Percentage to increase salary? ");
         double percentage = sc.nextDouble();
 
-        employee.increaseSalary(percentage);
-
-        System.out.println("Updated data: " + employee);
+        double calculo2 = Calculadora.increaseSalary(percentage, calculo1);
+        System.out.printf("Update data: " + employee.getName() + "$ " + "%.2f\n", calculo2);
         sc.close();
     }
 }

@@ -21,13 +21,13 @@ public class Program {
 
         Student student = new Student(name, nota1, nota2, nota3);
 
-        Calculos.finalGrade(student.nota1, student.nota2, student.nota3);
+        Calculos.finalGrade(student.getNota1(), student.getNota2(), student.getNota3());
 
-        System.out.println("Final grade = " + Calculos.finalGrade(student.nota1, student.nota2, student.nota3));
+        System.out.println("Final grade = " + Calculos.finalGrade(student.getNota1(), student.getNota2(), student.getNota3()));
 
-        if(Calculos.finalGrade(student.nota1, student.nota2, student.nota3) < 60){
+        if(Calculos.finalGrade(student.getNota1(), student.getNota2(), student.getNota3()) < 60){
             System.out.println("Failed");
-            System.out.printf("Missing %.2f points%n", Calculos.missingGrade(student.nota1, student.nota2, student.nota3));
+            System.out.printf("Missing %.2f points%n", Calculos.missingGrade(student.getNota1(), student.getNota2(), student.getNota3()));
 
         }
         else{
