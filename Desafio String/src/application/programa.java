@@ -1,13 +1,18 @@
 package application;
 
+import java.util.Scanner;
+
 public class programa {
     public static void main(String[] args){
-        String frase = "Computer World Information";
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite a frase: ");
+        String frase = sc.nextLine();
         String[] frase1 = frase.split(" ");
 
-        for(int i = 0; i < frase1.length; i++){
-            String fraseSplit = frase1[i];
-            System.out.println(fraseSplit.charAt(0));
+        for (String fraseSplit : frase1) {
+            char x = fraseSplit.charAt(0);
+            System.out.print(x);
         }
     }
 }
