@@ -10,12 +10,13 @@ public class Program {
 
         System.out.println("Digite a hora: (hh:mm)");
         String horario = sc.nextLine();
-        String[] horarioCalculo = horario.split(":");
+        String[] horarioDividido = horario.split(":");
 
-        System.out.println("Digite os minutos a serem acresido: ");
+
+        System.out.println("Digite os minutos a serem acrescido: ");
         int minutosAcrescidos = sc.nextInt();
 
-        int soma = Integer.parseInt(horarioCalculo[1]) + minutosAcrescidos;
-        System.out.println(soma);
+        System.out.println(Calculadora.somaMinutos(horarioDividido, minutosAcrescidos));
+        System.out.println(Calculadora.somaHora(horarioDividido, minutosAcrescidos));
     }
 }
