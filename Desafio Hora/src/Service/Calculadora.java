@@ -33,7 +33,8 @@ public class Calculadora {
             }
 
             if(Integer.parseInt(horario[0]) >= 24){
-                return horario[0] = "00";
+                int horarioNoturno = Integer.parseInt(horario[0]) - 24;
+                return horario[0] = String.valueOf(horarioNoturno);
             }
         }
 
