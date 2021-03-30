@@ -6,9 +6,7 @@ public class Calculadora {
         int somaMinutos = Integer.parseInt(horario[1]) + minutos;
 
         if(somaMinutos >= 60){
-            for(int i = somaMinutos; i >= 60; i = i){
-                horario[1] = String.valueOf(i -= 60);
-            }
+            for(int i = somaMinutos; i >= 60;) horario[1] = String.valueOf(i -= 60);
             if(Integer.parseInt(horario[1]) < 10){
                 return "0" + horario[1];
             }
