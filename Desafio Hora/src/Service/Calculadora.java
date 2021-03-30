@@ -7,7 +7,6 @@ public class Calculadora {
 
         if(somaMinutos >= 60){
             horario[1] = String.valueOf(somaMinutos - 60);
-
             if(Integer.parseInt(horario[1]) < 10){
                 return "0" + horario[1];
             }
